@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { onMounted, ref, unref } from "vue"
+import { defineComponent, onMounted, ref, unref } from "vue"
 import { useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -22,7 +22,7 @@ import PostHeader from "@/components/PostHeader.vue"
 import PostBody from "@/components/PostBody.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "BlogPost",
     components: {
         Layout,
@@ -47,5 +47,5 @@ export default {
             post,
         }
     },
-}
+})
 </script>

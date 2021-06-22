@@ -4,11 +4,11 @@
 
 
 <script>
-import { ref, unref } from "vue"
+import { defineComponent, ref, unref } from "vue"
 
 import { parseISO, format } from "date-fns"
 
-export default {
+export default defineComponent({
     name: "Date",
     props: {
         dateString: {
@@ -25,5 +25,5 @@ export default {
             humanDate,
         }
     },
-}
+})
 </script>

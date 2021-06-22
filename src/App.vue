@@ -3,12 +3,13 @@
 </template>
 
 <script>
+import { defineComponent } from "vue"
 import { RouterView } from "vue-router"
 
-export default {
+export default defineComponent({
     name: "App",
     components: {
         RouterView
     }
-}
+})
 </script>

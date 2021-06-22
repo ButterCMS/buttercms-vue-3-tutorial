@@ -47,7 +47,7 @@
 
 
 <script>
-import { computed } from "vue"
+import { computed, defineComponent } from "vue"
 import { RouterLink } from "vue-router"
 
 import HumanDate from "./Date.vue"
@@ -55,7 +55,7 @@ import Avatar from "./Avatar.vue"
 import CoverImage from "./CoverImage.vue"
 import PostTitle from "./PostTitle.vue"
 
-export default {
+export default defineComponent({
     name: "PostHeader",
     components: {
         Avatar,
@@ -95,5 +95,5 @@ export default {
             authorFullName,
         }
     },
-}
+})
 </script>

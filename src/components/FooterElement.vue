@@ -30,12 +30,14 @@
 
 
 <script>
+import { defineComponent } from "vue"
+
 import Container from "./Container.vue"
 
-export default {
+export default defineComponent({
     name: "FooterElement",
     components: {
         Container,
     },
-}
+})
 </script>

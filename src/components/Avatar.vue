@@ -18,7 +18,9 @@
 
 
 <script>
-export default {
+import { defineComponent } from "vue"
+
+export default defineComponent({
     name: "Avatar",
     props: {
         name: { type: String,
@@ -26,5 +28,5 @@ export default {
         picture: { type: String,
             default: "" },
     },
-}
+})
 </script>

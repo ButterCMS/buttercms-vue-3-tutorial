@@ -31,14 +31,14 @@
 
 
 <script>
-import { computed } from "vue"
+import { computed, defineComponent } from "vue"
 import { RouterLink } from "vue-router"
 
 import Avatar from "./Avatar.vue"
 import CoverImage from "./CoverImage.vue"
 import HumanDate from "./Date.vue"
 
-export default {
+export default defineComponent({
     name: "PostPreview",
     components: {
         Avatar,
@@ -81,5 +81,5 @@ export default {
             authorFullName,
         }
     },
-}
+})
 </script>

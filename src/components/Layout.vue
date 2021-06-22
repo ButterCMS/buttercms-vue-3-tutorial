@@ -43,17 +43,19 @@
 
 
 <script>
+import { defineComponent } from "vue"
 import { RouterLink } from "vue-router"
 
 import Container from "./Container.vue"
 import FooterElement from "./FooterElement.vue"
 
-export default {
+
+export default defineComponent({
     name: "Layout",
     components: {
         Container,
         FooterElement,
         RouterLink
     },
-}
+})
 </script>
