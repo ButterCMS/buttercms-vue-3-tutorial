@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 import { RouterLink } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -54,7 +54,7 @@ import HumanDate from "@/components/Date.vue"
 import HeaderElement from "@/components/HeaderElement.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "CaseStudies",
     components: {
         HeaderElement,
@@ -75,5 +75,5 @@ export default {
             caseStudies,
         }
     },
-}
+})
 </script>

@@ -103,11 +103,12 @@
 </template>
 
 <script>
+import { defineComponent } from "vue"
 import { RouterLink, RouterView } from "vue-router"
 import HeaderElement from "@/components/HeaderElement.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "Home",
     components: {
         HeaderElement,
@@ -115,5 +116,5 @@ export default {
         RouterLink,
         RouterView
     },
-}
+})
 </script>

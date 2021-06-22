@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { onMounted, ref, unref } from "vue"
+import { defineComponent, onMounted, ref, unref } from "vue"
 import { useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -32,7 +32,7 @@ import PostPreview from "@/components/PostPreview.vue"
 import HeaderElement from "@/components/HeaderElement.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "Category",
     components: {
         HeaderElement,
@@ -59,5 +59,5 @@ export default {
             loaded,
         }
     },
-}
+})
 </script>

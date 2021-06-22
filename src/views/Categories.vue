@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 import { RouterLink } from "vue-router"
 
 import { butter } from "@/buttercms.js"
 import HeaderElement from "@/components/HeaderElement.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "Categories",
     components: {
         HeaderElement,
@@ -50,5 +50,5 @@ export default {
             loaded,
         }
     },
-}
+})
 </script>

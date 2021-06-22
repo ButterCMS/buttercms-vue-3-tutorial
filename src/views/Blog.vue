@@ -77,7 +77,7 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 import { useRoute, RouterLink } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -85,7 +85,7 @@ import HeaderElement from "@/components/HeaderElement.vue"
 import PostPreview from "@/components/PostPreview.vue"
 import Layout from "@/components/Layout.vue"
 
-export default {
+export default defineComponent({
     name: "Blog",
     components: {
         HeaderElement,
@@ -120,5 +120,5 @@ export default {
             prevPage,
         }
     },
-}
+})
 </script>

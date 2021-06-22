@@ -8,7 +8,9 @@
 
 
 <script>
-export default {
+import { defineComponent } from "vue"
+
+export default defineComponent({
     name: "HeaderElement",
     props: {
         title: {
@@ -16,5 +18,5 @@ export default {
             default: "",
         },
     },
-}
+})
 </script>

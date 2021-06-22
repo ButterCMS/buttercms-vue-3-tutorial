@@ -4,11 +4,11 @@
 </template>
 
 <script>
-import { onMounted, ref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 
 import { butter } from "@/buttercms.js"
 
-export default {
+export default defineComponent({
     name: "Atom",
     setup () {
         const atom = ref( "" )
@@ -21,5 +21,5 @@ export default {
             atom
         }
     },
-}
+})
 </script>
