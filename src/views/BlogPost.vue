@@ -2,20 +2,46 @@
 <layout>
     <article v-if="loaded">
         <post-header
-            :title="post.title"
-            :cover-image="post.featured_image"
-            :date="post.published"
-            :author="post.author"
-            :categories="post.categories"
+            :title="post.data.title"
+            :cover-image="post.data.featured_image"
+            :date="post.data.published"
+            :author="post.data.author"
+            :categories="post.data.categories"
         ></post-header>
-        <post-body :content="post.body"></post-body>
+
+        <post-body :content="post.data.body"></post-body>
+
+        <div
+            v-if="post.meta.previous_post || post.meta.next_post"
+            class="my-2 flex justify-between"
+        >
+            <router-link
+                v-if="post.meta.previous_post"
+                :to="{
+                    name: 'BlogPost',
+                    params: { slug: post.meta.previous_post.slug },
+                }"
+            >
+                {{ post.meta.previous_post.title }}
+            </router-link>
+
+            <router-link
+                :to="{
+                    name: 'BlogPost',
+                    params: { slug: post.meta.next_post.slug },
+                }"
+                v-if="post.meta.next_post"
+            >
+                {{ post.meta.next_post.title }}
+            </router-link>
+        </div>
     </article>
 </layout>
 </template>
 
 <script>
-import { defineComponent, onMounted, ref, unref } from "vue"
-import { useRoute } from "vue-router"
+import { defineComponent, onMounted, ref, unref, watch } from "vue"
+import { RouterLink, useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
 import PostHeader from "@/components/PostHeader.vue"
@@ -28,19 +54,27 @@ export default defineComponent({
         Layout,
         PostBody,
         PostHeader,
+        RouterLink,
     },
     setup () {
         const post = ref([])
         const loaded = ref( false )
         const route = useRoute()
 
-        onMounted( async () => {
+        onMounted( () => getPost( route.params.slug ) )
+
+        watch( () => route.params.slug, ( postSlug ) => getPost( postSlug ) )
+
+        async function getPost ( postSlug ) {
+            console.log( "getPost", postSlug )
+            loaded.value = false
             post.value = (
-                await butter.post.retrieve( route.params.slug )
-            ).data.data
-            document.title = unref( post ).title
+                await butter.post.retrieve( postSlug )
+            ).data
+            console.log( unref( post ) )
+            document.title = unref( post ).data.title
             loaded.value = true
-        })
+        }
 
         return {
             loaded,
