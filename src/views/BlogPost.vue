@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref, unref, watch } from "vue"
+import { defineComponent, onMounted, ref, watch } from "vue"
 import { RouterLink, useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -66,13 +66,11 @@ export default defineComponent({
         watch( () => route.params.slug, ( postSlug ) => getPost( postSlug ) )
 
         async function getPost ( postSlug ) {
-            console.log( "getPost", postSlug )
             loaded.value = false
             post.value = (
                 await butter.post.retrieve( postSlug )
             ).data
-            console.log( unref( post ) )
-            document.title = unref( post ).data.title
+            document.title = post.value.data.title
             loaded.value = true
         }
 

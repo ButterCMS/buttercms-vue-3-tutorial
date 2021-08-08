@@ -7,12 +7,12 @@
     >
         <li
             :key="index"
-            className="mb-5"
+            class="mb-5"
         >
-            <div className="text-lg leading-6 font-medium text-gray-900">
+            <div class="text-lg leading-6 font-medium text-gray-900">
                 {{ faq.question }}
             </div>
-            <div className="mt-4 text-base text-gray-500">
+            <div class="mt-4 text-base text-gray-500">
                 {{ faq.answer }}
             </div>
         </li>

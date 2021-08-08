@@ -36,7 +36,7 @@ import { RouterLink } from "vue-router"
 
 import Avatar from "./Avatar.vue"
 import CoverImage from "./CoverImage.vue"
-import HumanDate from "./Date.vue"
+import HumanDate from "./HumanDate.vue"
 
 export default defineComponent({
     name: "PostPreview",

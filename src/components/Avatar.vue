@@ -4,8 +4,8 @@
         <img
             v-if="picture"
             :src="picture"
-            height="48px"
-            width="48px"
+            height="48"
+            width="48"
             class="w-12 h-12 rounded-full grayscale object-cover"
             :alt="name"
         >
@@ -23,10 +23,14 @@ import { defineComponent } from "vue"
 export default defineComponent({
     name: "Avatar",
     props: {
-        name: { type: String,
-            default: "" },
-        picture: { type: String,
-            default: "" },
+        name: {
+            type: String,
+            default: ""
+        },
+        picture: {
+            type: String,
+            default: ""
+        },
     },
 })
 </script>
