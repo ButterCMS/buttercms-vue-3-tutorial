@@ -6,7 +6,7 @@
         ></header-element>
 
         <div
-            className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-10"
+            class="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-10"
         >
             <post-preview
                 v-for="post in category.recent_posts"
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref, unref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 import { useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
@@ -46,11 +46,11 @@ export default defineComponent({
 
         onMounted( async () => {
             category.value = (
-                await await butter.category.retrieve( route.params.slug, {
+                await butter.category.retrieve( route.params.slug, {
                     include: "recent_posts",
                 })
             ).data.data
-            document.title = unref( category ).name
+            document.title = category.value.name
             loaded.value = true
         })
 

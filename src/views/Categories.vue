@@ -5,7 +5,7 @@
         <li
             v-for="category in categories"
             :key="category.slug"
-            className="mb-5"
+            class="mb-5"
         >
             <router-link
                 class-name="text-lg leading-6 font-medium hover:underline"
@@ -41,7 +41,7 @@ export default defineComponent({
         const loaded = ref( false )
 
         onMounted( async () => {
-            categories.value = ( await await butter.category.list() ).data.data
+            categories.value = ( await butter.category.list() ).data.data
             loaded.value = true
         })
 

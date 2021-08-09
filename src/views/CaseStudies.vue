@@ -4,7 +4,7 @@
     <div
         v-for="(caseStudy, index) in caseStudies"
         :key="index"
-        className="grid grid-flow-col auto-rows-max gap-4 mb-5"
+        class="grid grid-flow-col auto-rows-max gap-4 mb-5"
     >
         <div>
             <router-link
@@ -18,7 +18,7 @@
             </router-link>
         </div>
         <div>
-            <h3 className="text-3xl mb-3 mt-3 leading-snug">
+            <h3 class="text-3xl mb-3 mt-3 leading-snug">
                 <router-link
                     :to="{
                         name: 'CaseStudy',
@@ -50,7 +50,7 @@ import { defineComponent, onMounted, ref } from "vue"
 import { RouterLink } from "vue-router"
 
 import { butter } from "@/buttercms.js"
-import HumanDate from "@/components/Date.vue"
+import HumanDate from "@/components/HumanDate.vue"
 import HeaderElement from "@/components/HeaderElement.vue"
 import Layout from "@/components/Layout.vue"
 

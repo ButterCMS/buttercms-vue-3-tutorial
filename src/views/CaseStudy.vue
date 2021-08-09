@@ -37,12 +37,12 @@
 </template>
 
 <script>
-import { defineComponent, onMounted, ref, unref } from "vue"
+import { defineComponent, onMounted, ref } from "vue"
 import { useRoute } from "vue-router"
 
 import { butter } from "@/buttercms.js"
 import HeaderElement from "@/components/HeaderElement.vue"
-import HumanDate from "@/components/Date.vue"
+import HumanDate from "@/components/HumanDate.vue"
 import Layout from "@/components/Layout.vue"
 
 export default defineComponent({
@@ -65,7 +65,7 @@ export default defineComponent({
                     route.params.slug
                 )
             ).data.data
-            document.title = unref( caseStudy ).name
+            document.title = caseStudy.value.name
             loaded.value = true
         })
 
